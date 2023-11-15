@@ -15,8 +15,8 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int		sum;
-	char	*dest;
+	size_t		sum;
+	char		*dest;
 	int		i;
 
 	i = 0;
