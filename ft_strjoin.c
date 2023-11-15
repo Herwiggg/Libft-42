@@ -44,12 +44,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	tab[j] = '\0';
 	return (tab);
 }
-/*
-#include <stdio.h>
 
-int main()
-{
-	char str[] = "test";
-	char str2[] = "oui";
-	printf("%s\n", ft_strjoin(str, str2));
-}*/
