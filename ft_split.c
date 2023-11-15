@@ -51,7 +51,7 @@ static char	**ft_strcpy(char **tab, const char *s, char c)
 	return (tab);
 }
 
-char	**ft_doublefree(char **tab, int k)
+static	char	**ft_doublefree(char **tab, int k)
 {
 	int	i;
 
