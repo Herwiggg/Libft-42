@@ -12,14 +12,19 @@
 
 #include "libft.h"
 #include <stdlib.h>
+#include <stdint.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	size_t		sum;
 	char		*dest;
-	int		i;
+	int			i;
 
 	i = 0;
+	if (nmemb == SIZE_MAX && size == SIZE_MAX)
+		return (NULL);
+	 if (SIZE_MAX / nmemb < size)
+        return (NULL);
 	sum = nmemb * size;
 	dest = malloc(sum);
 	if (!dest)
@@ -31,3 +36,4 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	}
 	return (dest);
 }
+
