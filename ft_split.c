@@ -9,7 +9,6 @@
 /*   Updated: 2023/11/14 15:44:20 by almichel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 #include <stdlib.h>
 
@@ -51,7 +50,7 @@ static char	**ft_strcpy(char **tab, const char *s, char c)
 	return (tab);
 }
 
-static	char	**ft_doublefree(char **tab, int k)
+static char	**ft_doublefree(char **tab, int k)
 {
 	int	i;
 
@@ -71,12 +70,14 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	k = 0;
-	j = 0;
+	if (s == NULL)
+		return (NULL);
 	tab = malloc((ft_count_words(s, c) + 1) * sizeof(char *));
 	if (!tab)
 		return (NULL);
 	while (k < ft_count_words(s, c))
 	{
+		j = 0;
 		while (s[i] == c)
 			i++;
 		while (s[i] != c && s[i++])
@@ -84,9 +85,7 @@ char	**ft_split(char const *s, char c)
 		tab[k++] = malloc((j + 1) * sizeof(char));
 		if (!tab[k - 1])
 			return (ft_doublefree(tab, k));
-		j = 0;
 	}
 	tab[k] = NULL;
-	ft_strcpy(tab, s, c);
-	return (tab);
+	return (ft_strcpy(tab, s, c));
 }
