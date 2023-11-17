@@ -30,6 +30,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		j;
 
+	if (!s1 || !s2)
+		return (NULL);
 	j = 0;
 	i = 0;
 	len = ft_strllen(s1) + ft_strllen(s2);
